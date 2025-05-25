@@ -1,0 +1,20 @@
+<div class="dashboard-container">
+  <h2>Dashboard Overview</h2>
+
+  <section class="stats">
+    <div class="stat-card" [appHighlight]="'#e0f7fa'">
+      <h3>Total Employees</h3>
+      <p>{{ totalEmployees }}</p>
+    </div>
+
+    <div class="stat-card" [appHighlight]="'#ffe0b2'">
+      <h3>Active Projects</h3>
+      <p>{{ activeProjects }}</p>
+    </div>
+
+    <div class="stat-card" [appHighlight]="'#c8e6c9'">
+      <h3>Pending Tasks</h3>
+      <p>{{ pendingTasks }}</p>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,30 @@
+<div class="employee-container">
+  <h2>Employee Management</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="employee-form">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input id="name" formControlName="name" placeholder="Enter name" />
+      <div class="error" *ngIf="form.get('name')?.invalid && form.get('name')?.touched">
+        Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" placeholder="Enter email" />
+      <div class="error" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        Enter a valid email
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="form.invalid" class="btn-submit">Add Employee</button>
+  </form>
+
+  <h3>Employees List</h3>
+  <ul class="employee-list">
+    <li *ngFor="let emp of employees" [appHighlight]="'#d1e7fd'">
+      {{ emp.name }} <span class="email">({{ emp.email }})</span>
+    </li>
+  </ul>
+</div>
